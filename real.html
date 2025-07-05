@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Barça vs Real Madrid – Prezenty TikToka</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #003399, #aa0000);
+      color: white;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 40px;
+      margin-bottom: 30px;
+    }
+    .container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .team {
+      width: 45%;
+      border: 2px solid white;
+      padding: 20px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .score {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+    button {
+      display: block;
+      margin: 10px auto;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 80%;
+      max-width: 300px;
+      color: white;
+    }
+    .real-btn { background-color: #1e3799; }
+    .barca-btn { background-color: #e74c3c; }
+    .reset { background-color: #444; margin-top: 30px; }
+  </style>
+</head>
+<body>
+  <h1>🎁 Barça vs Real Madrid 🎁</h1>
+
+  <div class="container">
+    <!-- REAL MADRID -->
+    <div class="team">
+      <h2>⚪ Real Madrid</h2>
+      <div class="score" id="realScore">0</div>
+      <button class="real-btn" onclick="addPoints('real', 10)">🌹 Róża +10</button>
+      <button class="real-btn" onclick="addPoints('real', 300)">🍩 Doughnut +300</button>
+      <button class="real-btn" onclick="addPoints('real', 1990)">🔥 Fire Up +1990</button>
+      <button class="real-btn" onclick="addPoints('real', 20000)">🏰 Castle +20000</button>
+      <button class="real-btn" onclick="addPoints('real', 250000)">🐉 Dragon Flame +250000</button>
+      <button class="real-btn" onclick="addPoints('real', 300000)">🦁 Lion +300000</button>
+    </div>
+
+    <!-- FC BARCELONA -->
+    <div class="team">
+      <h2>🔵🔴 FC Barcelona</h2>
+      <div class="score" id="barcaScore">0</div>
+      <button class="barca-btn" onclick="addPoints('barca', 10)">🎁 TikTok Gift +10</button>
+      <button class="barca-btn" onclick="addPoints('barca', 500)">🦄 Unicorn +500</button>
+      <button class="barca-btn" onclick="addPoints('barca', 10000)">🌌 Galaxy +10000</button>
+      <button class="barca-btn" onclick="addPoints('barca', 200000)">🚀 Shuttle +200000</button>
+      <button class="barca-btn" onclick="addPoints('barca', 350000)">🐳 Whale & Seal +350000</button>
+      <button class="barca-btn" onclick="addPoints('barca', 400000)">🏰 TikTok Universe +400000</button>
+    </div>
+  </div>
+
+  <button class="reset" onclick="resetScores()">🔁 Resetuj Wyniki</button>
+
+  <script>
+    let realScore = 0;
+    let barcaScore = 0;
+
+    function updateScores() {
+      document.getElementById('realScore').textContent = realScore.toLocaleString();
+      document.getElementById('barcaScore').textContent = barcaScore.toLocaleString();
+    }
+
+    function addPoints(team, points) {
+      if (team === 'real') realScore += points;
+      if (team === 'barca') barcaScore += points;
+      updateScores();
+    }
+
+    function resetScores() {
+      realScore = 0;
+      barcaScore = 0;
+      updateScores();
+    }
+  </script>
+</body>
+</html>
